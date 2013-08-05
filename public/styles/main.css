@@ -1,0 +1,23 @@
+body {
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+#stars li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+li.star {
+  width: 65px;
+  height: 52px;
+  background-image: url("/images/stars.png");
+  background-position: 0 0;
+}
+
+li.star.highlight {
+  background-position: 65px 0;
+}

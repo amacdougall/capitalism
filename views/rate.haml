@@ -1,0 +1,19 @@
+%h1 Please rate your visit to #{doctor["name"]}
+%img{:src => "#{doctor["photo"]}"}
+.main
+  %div Click some stars!
+  %ul#stars
+    %li.star{:data => {rating: 1}}
+      %a{:href => "javascript:"}
+    %li.star{:data => {rating: 2}}
+      %a{:href => "javascript:"}
+    %li.star{:data => {rating: 3}}
+      %a{:href => "javascript:"}
+    %li.star{:data => {rating: 4}}
+      %a{:href => "javascript:"}
+    %li.star{:data => {rating: 5}}
+      %a{:href => "javascript:"}
+    %li#submit{:data => links}
+      %a{:href => "/feedback/#{doctor["id"]}"} Rate!
+
+%script{:src => "/javascript/rate.js"}
