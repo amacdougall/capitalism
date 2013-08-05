@@ -8,6 +8,6 @@ gem "haml"
 
 gem "safe_yaml"
 
-gem "pry"
-gem "pry-debugger"
-gem "pry-stack_explorer"
+# gem "pry"
+# gem "pry-debugger"
+# gem "pry-stack_explorer"
