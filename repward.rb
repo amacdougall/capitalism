@@ -11,13 +11,14 @@ helpers do
 end
 
 get "/" do
-  haml :index, :locals => {page_title: "RepWard index"}
+  haml :index, :locals => {:page_title => "RepWard index"}
 end
 
-get "/rate/:doctor" do
+# Rate a doctor
+get "/:doctor" do
   doctor = get_doctor_info params["doctor"]
   haml :rate, :locals => {
-    :page_title => "Rate your visit",
+    :page_title => "Rate your visit with #{doctor["name"]}",
     :doctor => doctor,
     :links => {
       :feedback_link => "/feedback/#{doctor['id']}",
@@ -26,7 +27,7 @@ get "/rate/:doctor" do
   }
 end
 
-get "/feedback/:doctor" do
+get "/:doctor/feedback" do
   doctor = get_doctor_info params["doctor"]
   feedback_link = "/feedback/#{doctor['id']}"
   haml :feedback, :locals => {
@@ -35,11 +36,11 @@ get "/feedback/:doctor" do
   }
 end
 
-post "/feedback/:doctor" do
+post "/:doctor/feedback" do
   # TODO: handle patient feedback by emailing the doctor
 end
 
-get "/publish/:doctor" do
+get "/:doctor/publish" do
   doctor = get_doctor_info params["doctor"]
   # TODO: add publish link from doctor profile
   haml :publish, :locals => {:doctor => doctor}

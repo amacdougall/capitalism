@@ -14,6 +14,8 @@ $(document).ready(function() {
       updateSubmitLink(currentRating);
       $stars.each(highlightBasedOnRating(currentRating));
     });
+
+    // TODO: highlight stars on mouseover, but only finalize on click
   };
 
   var getRatingFromStar = function(star) {
