@@ -1,0 +1,11 @@
+.main
+  %h1 Would you like to provide some feedback?
+  %div
+    Apology text here.
+  %form{:action => feedback_link}
+    .feedback
+      %label{:for => "patient_name"} Name:
+      %input{:type => "text", :name => "patient_name"}
+      %label{:for => "patient_email"} Email:
+      %input{:type => "text", :name => "patient_email"}
+      %input{:type => "submit"} Submit

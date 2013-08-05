@@ -28,10 +28,19 @@ end
 
 get "/feedback/:doctor" do
   doctor = get_doctor_info params["doctor"]
-  haml :feedback, :locals => {:doctor => doctor}
+  feedback_link = "/feedback/#{doctor['id']}"
+  haml :feedback, :locals => {
+    :doctor => doctor,
+    :feedback_link => feedback_link
+  }
+end
+
+post "/feedback/:doctor" do
+  # TODO: handle patient feedback by emailing the doctor
 end
 
 get "/publish/:doctor" do
   doctor = get_doctor_info params["doctor"]
+  # TODO: add publish link from doctor profile
   haml :publish, :locals => {:doctor => doctor}
 end
